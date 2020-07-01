@@ -44,8 +44,8 @@ var daysOfWeek = {
    day7: printThis()
 }
 
-//daysOfWeek.forEach ( key => console.log ( days [ key ]) );
+daysOfWeek.forEach ( key => console.log ( days [ key ]) );
 
 
 
-console.log(daysOfWeek)
+
