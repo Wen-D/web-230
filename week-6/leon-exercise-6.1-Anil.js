@@ -2,8 +2,8 @@
  	; Title: Exercise 6.1 - Objects and Build-in Objects
  	; Professor Cross
  	; Author: Anil Rayamajhi
- 	; Date: 29 June 2020 (PST)
- 	; Modified by: {name}
+ 	; Date: 2 July 2020 (PST)
+ 	; Modified by: Wendy
  	;
  	; Description: Javascript program with multiple errors.
  	;===========================================
@@ -52,7 +52,7 @@
 
 
  	// Object Bracket Notation
- 	console.log(person.fullName); // removed brackets and replaced by dot '.'
+ 	console.log(person['fullName']); // added quotes
  	// HINT: refer to JavaScript getter
  	// Look for formatted Address
- 	console.log(person.formattedAddress);
+ 	console.log(person['formattedAddress']);
