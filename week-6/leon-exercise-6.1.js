@@ -1,7 +1,7 @@
 /* ===========================================
 ; Title: Assignment 6. Objects
 ; Author: Professor Krasso
-; Date: 24 July 2020
+; Date: 2 July 2020
 ; Modified By: Wendy Leon
 ; Description: Objects
 ;=========================================== */
