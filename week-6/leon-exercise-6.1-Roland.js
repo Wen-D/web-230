@@ -15,7 +15,7 @@ var header = require('../roland-header.js');
 console.log(header.display('Jonathan','Roland','Assignment 6.1'));
 */
 var header = require('../header.js');
-console.log(header.display("Wendy", "Leon", "Exercise 6.2 - Exception Handling"));
+console.log(header.display("Wendy", "Leon", "Exercise 6.1 - Find 2+ errors"));
 console.log('\n');
 
 var starWarsMovies = {

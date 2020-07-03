@@ -20,7 +20,7 @@
 // Add Header
 
 var header = require('../header.js');
-console.log(header.display("Wendy", "Leon", "Exercise 6.1 - Find the two+ errors"));
+console.log(header.display("Wendy", "Leon", "Exercise 6.1 - Exception Handling"));
 console.log('\n');
 
 try {
