@@ -20,7 +20,7 @@
 // Add Header
 
 var header = require('../header.js');
-console.log(header.display("Wendy", "Leon", "Exercise 6.2 - Exception Handling"));
+console.log(header.display("Wendy", "Leon", "Exercise 6.4 - nested object literals"));
 console.log('\n');
 
 var person = {
