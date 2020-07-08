@@ -1,0 +1,61 @@
+<!-- ===========================================
+; Title: Discussion Board 7.1 - JavaScript in Web Browsers
+; Author: Arlix Sorto
+; Date: 7/7/2020
+; Modified By:
+; Description: A program with four errors
+;===========================================
+
+
+
+
+/*
+Expected output:
+  1.Cloudy
+  2.Rain
+  3.Drizzle
+  4.Thunder
+  5.Sunny
+  6.Wind
+  7.Snowfall
+  8.Lightning
+  9.Hail
+*/
+-->
+
+<html lang="en">
+  <head>
+    <title>Four errors</title>
+  </head>
+  <body></body>
+  <script>
+    window.onload =  function(){ // Missing function keyword
+      //FIXME: Should output a list of weathers
+
+      var weatherArray = [
+        "Cloudy",
+        "Rain",
+        "Drizzle",
+        "Thunder",
+        "Sunny",
+        "Wind",
+        "Snowfall",
+        "Lightning",
+        "Hail",
+      ];
+
+      //loop over an array.
+      function displayWeather(weathers) {
+        document.write("<ol>"); // document.Write - no caps on write
+
+        for (var i = 0; i < weathers.length; i++) {
+          document.write("<li>" + weathers[i] + "</li>");
+        }
+        document.write("</ol>");
+      }
+
+      //Calls displayWeather function
+      displayWeather(weatherArray);
+    };
+  </script>
+</html>
