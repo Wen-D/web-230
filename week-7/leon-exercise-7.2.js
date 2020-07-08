@@ -28,35 +28,36 @@ console.log('\n');
 /*
 var characters = {
   name: "Thomas Edison",
-  position: " Software Engineer"
+  title: " Software Engineer"
 };
 
 console.log (characters.name);
 */
 
-function character2 ( numberChar, name, position ) {
-  this.numberChar = numberChar;
-  this.name = name;
-  this.position = position;
+function employees2 ( id, firstName, lastName, title ) {
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.title = title;
 }
 
-var characters2 = [
-  new character2 ("1", "Thomas Edison","Software Engineer"),
+var employee2 = [
+  new employees2 ("1", "Thomas", "Edison","Software Engineer"),
 
-  new character2 ("2", "Benjamin Franklin", "Programmer"),
+  new employees2 ("2", "Benjamin", "Franklin", "Programmer"),
 
-  new character2 ("3", "Nikola Tesla", "Project Manager"),
+  new employees2 ("3", "Nikola", "Tesla", "Project Manager"),
 
-  new character2 ("4", "Charles Babbage", "Product Manager"),
+  new employees2 ("4", "Charles", "Babbage", "Product Manager"),
 
-  new character2 ("5", "Alexander Bell", "Business Analyst")
+  new employees2 ("5", "Alexander", "Bell", "Business Analyst")
 ]
 
-Object.keys(characters2).forEach (
+Object.keys(employee2).forEach (
 
   element =>
 
-  console.log ( characters2[element].numberChar + " " + characters2[element].name + " " + characters2[element].position)
+  console.log ( employee2[element].id + " " + employee2[element].firstName + " " + employee2[element].lastName + " " + employee2[element].title)
 
   );
 
@@ -64,7 +65,7 @@ console.log('\n');
 
 /* another way of printing the same result
 
-  characters2.forEach (key => console.log(key.numberChar + " " + key.name + " " + key.position));
+  employee2.forEach (key => console.log(key.id + " " + key.firstName + " " + key.lastName + " " + key.title));
 */
 
   console.log('\n');
