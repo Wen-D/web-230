@@ -1,0 +1,55 @@
+<!--
+============================================
+; Title:  Discussion Board
+; Author: Professor Krasso
+; Date:   8 July 2020
+; Modified by: Karina Alvarez
+; Description: Create an HTML program using
+; DOM elements with two or more errors.
+;===========================================
+-->
+
+<!--Output should be :
+  Discussion Board 7.1
+During our week 7 we are learning how to use DOM elements
+I am using the getElementsByTagName and getElementById method.
+Javascript Output using DOM elements
+The first paragraph inside "main" is: During our week 7 we are learning how to use DOM elements
+The second paragraph inside "main" is: I am using the getElementsByTagName and getElementById method.-->
+
+<!--Start of program-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+   <title>Discussion Board 7.1 - Javascript in Web Browsers</title>
+  </head>
+<body>
+
+<!--One error bellow-->
+<h2>Discussion Board 7.1</h2>
+
+<div id="main">
+<p>During our week 7 we are learning how to use DOM elements</p>
+<p>I am using the <b>getElementsByTagName</b> and <b> getElementById</b> method.</p>
+</div>
+<br>
+<h3>Javascript Output using DOM elements</h3>
+<p id = 'paragraph1'> </p> <!-- P tag was missing closing bracket -->
+<p id = 'paragraph2'></p>
+
+<!--Multiple errors bellow-->
+<script>
+var a = document.getElementById("main"); // equal sign to assign a value to a variable
+
+var b = document.getElementsByTagName("P")[0];// equal sign to assign a value to a variable document keyqord missing
+
+document.getElementById('paragraph1').innerHTML =
+'The first paragraph inside "main" is: ' + b.innerHTML; // removed [0] b already contained the p tag element
+
+document.getElementById('paragraph2').innerHTML =  // removed caps from innerHTML
+'The second paragraph inside "main" is: ' + b.innerHTML;
+
+</script> <!-- Script tag was missing-->
+</body>
+</html>
