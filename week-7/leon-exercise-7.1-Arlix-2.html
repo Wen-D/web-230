@@ -1,0 +1,68 @@
+<!-- ===========================================
+; Title: Discussion Board 7.1 - JavaScript in Web Browsers
+; Author: Arlix Sorto
+; Date: 7/8/2020
+; Modified By:
+; Description: Errors
+;===========================================
+​
+​
+/*
+Expected output:
+  1.Cloudy
+  2.Rain
+  3.Drizzle
+  4.Thunder
+  5.Sunny
+  6.Wind
+  7.Snowfall
+  8.Lightning
+  9.Hail
+*/
+-->
+​
+<html lang="en">
+  <head>
+	<title>Four errors</title>
+
+	<script>
+		window.onload =  function() { // Solution: Added function keyword before the parentheses
+		  //FIXME: Should output a list of weathers
+
+    var weatherArray = [
+			"Cloudy",
+			"Rain",
+			"Drizzle",
+			"Thunder",
+			"Sunny",
+			"Wind",
+			"Snowfall",
+			"Lightning",
+			"Hail",
+		  ];
+      //document.write(weatherArray);
+
+		  //Display a list of weathers.
+		  function displayWeather(weathers) {
+
+			var weatherContainer = document.getElementsByClassName("weatherContainer")[0];
+			// Solution: Added  [0] after getElementsByClassName()
+			var weatherList = document.createElement("ol");
+			 //Solution: Should be createElement not newElement.
+       for (var i = 0; i < weathers.length; i++) {
+			  weatherList.innerHTML += "<li>" + weathers[i] + "</li>";
+			}
+			weatherContainer.appendChild(weatherList);
+		  }
+      //Calls displayWeather function
+		  displayWeather(weatherArray);
+		};
+
+	  </script>
+  </head>
+  <body>
+    <div class="weatherContainer"></div>
+  </body>
+
+
+</html>

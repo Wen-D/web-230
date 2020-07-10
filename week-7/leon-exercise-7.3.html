@@ -1,0 +1,76 @@
+<!-- /* ===========================================
+; Title: Assignment 7.3 Client side JS
+; Author: Professor Krasso
+; Date: 8 July 2020
+; Modified By: Wendy Leon
+; Description: Constructor Functions
+;=========================================== */
+/* -->
+
+<!-- // expected output: http://content.bellevue.edu/cst/WEB/WEB230/Exercise_7.jpg -->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <link rel="stylesheet" href="../site.css" />
+  <title> Exercise 7.3 - Client-Side JavaScript </title>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <!-- <link rel="stylesheet" href="/path/to/your/root/css/file"> -->
+</head>
+
+<body>
+<h2> Shopping List v.1 </h2>
+
+<ol>
+<script>
+
+var shoppingList = ["Oranges", "Apples", "Pears", "Limes", "Lemons"];
+
+
+
+for ( x = 0; x < shoppingList.length ; x++ ){
+
+  document.write (
+
+    '<li>' +
+        shoppingList [x] +
+    '</li>'
+
+  );
+
+}
+document.write('</ol>');
+document.write('<h2> Shopping List v.2 </h2>');
+
+shoppingList2 = '<table> <tr> <th>Id</th> <th>Item</th> </tr>';
+
+document.write("<div id = 'list'> </div>");
+
+ for ( x = 0; x < shoppingList.length ; x++ ){
+
+  shoppingList2 +=
+
+    '<tr>' +
+    '<td>' + (x+1) + '</td>' +
+    '<td>' +
+        shoppingList [x] +
+    '</td>' +
+    '</tr>';
+
+  };
+
+
+
+  shoppingList2 += '</table>';
+
+  document.getElementById("list").innerHTML = shoppingList2;
+
+</script>
+
+
+
+
+</body>
+</html>
