@@ -1,0 +1,147 @@
+<!---- ===========================================
+; Title: Assignment 8.3 JQuery
+; Author: Professor Krasso
+; Date: 15 July 2020
+; Modified By: Wendy Leon
+; Description: JQuery
+;=========================================== -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.3 JQuery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../site.css" />
+  <style type="text/css">
+
+    ul {
+      list-style: none;
+    }
+    table {
+      margin: 40px 0;
+      }
+    body {
+      font-family: roboto;
+      }
+    h1{
+      font-weight: 500;
+      }
+    th{
+      font-weight: 400;
+      }
+    td, p {
+      font-weight: 300;
+      }
+    nav{
+      width: 100%;
+      background: black;
+      text-align: center;
+      padding: 3px 0;
+    }
+    nav div{
+      margin: 0px auto;
+    }
+    nav a{
+      margin-right: 40px;
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+    }
+    table, #paragraph{
+      width: auto;
+
+      max-width: 50%;
+      float: left;
+      margin: 20px 0 0 20px;
+    }
+    h1{
+      margin: 20px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+<h1>Exercise 8.3 - Dynamic HTML</h1>
+<nav>
+  <div>
+      <a href="#">Home</a>
+      <a href="#">About Fruits</a>
+      <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div id="paragraph">
+  <p> </p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fruit</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+
+  </tbody>
+
+</table>
+
+<div id="fruits"></div>
+
+<script>
+// Fill p tag with a paragraph of Lorem Ipsum data
+$("p").text("Lorem ipsum dolor sit amet," +
+"consectetur adipiscing elit. Nunc volutpat" +
+"ligula ipsum, at ultricies ante posuere sit amet." +
+"In a posuere odio. Cras scelerisque nisi sit amet" +
+"purus gravida pellentesque.");
+//Give the HTML paragraph a title
+$("p").prepend("<h2> Paragraph Header </h2>");
+//Underneath the paragraph add an HTML button and name it "Toggle"
+$("p").after("<button> Toggle </button>");
+//Using jQuery's "click" and "toggle" functions,
+//register a click event for the "Toggle" button
+//and show or hide the paragraph each time the button is clicked
+$("button").click(function(){
+  $("p").toggle();
+})
+
+//Create an HTML table of at least five (5) fruits with the following fields
+var citrusList = [
+  {id: 1, fruit: "Lemon"},
+  {id: 2, fruit: "Lime"},
+  {id: 3, fruit: "Orange"},
+  {id: 4, fruit: "Clementine"},
+  {id: 5, fruit: "Grapefruit"},
+]
+
+var fruitHtml = citrusList.map (function (fruits){
+  return `
+
+  <tr>
+  <td class="id"><a href="#">${fruits.id}</a></td>
+  <td>${fruits.fruit}</td>
+  </tr>
+
+  `;
+}).join('');
+
+document.getElementById("tableBody").innerHTML = fruitHtml;
+
+$(".id").click(function(){
+  var thisId = $(this).text();
+  var thisfruit = $(this).closest("td").next().text();
+  //document.getElementById("fruits").innerHTML = "ID: " + thisId + "Fruit: " + thisfruit;
+  alert("ID: " + thisId + " Fruit: " + thisfruit);
+});
+
+</script>
+
+</body>
+</html>
