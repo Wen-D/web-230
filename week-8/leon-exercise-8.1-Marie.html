@@ -1,0 +1,36 @@
+<!--
+ 	============================================
+ 	; Title: Find errors
+ 	; Author: Marie Nicole Barleta
+ 	; Date: 07 16 2020
+ 	; Modified by: Wendy Leon
+ 	; Description: Find errors in jQuery
+ 	;===========================================
+ 	-->
+
+ 	<!DOCTYPE html>
+ 	<head>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 	</head>
+
+ 	<body>
+
+ 	<div class="header">
+ 	<input id="input" value="Change header and press enter.." type="text" size="50">
+ 	<h1>Header</h1>
+
+ 	</div>
+
+ 	<script>
+ 	//find multiple errors
+ 	$('input').change(function() { //  wrong onchange syntax
+ 	var val, h1;
+ 	value = $("#input").val(); // ID selector # missing
+  var	h2 = $(".header").children("h1"); // header is a class - needs . class selector - corrected children syntax
+ 	$(".header").val(); // corrected syntax to select tag of header class
+ 	$("h1").css('color','cornflowerblue'); // corrected syntax to select h1 tag
+
+ 	});
+ 	</script>
+ 	</body>
+ 	</html>
