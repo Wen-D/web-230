@@ -1,0 +1,99 @@
+<!---- ===========================================
+; Title: Assignment 8.4 JQuery
+; Author: Professor Krasso
+; Date: 17 July 2020
+; Modified By: Wendy Leon
+; Description: JQuery - 8.4
+;=========================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 8.4</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
+
+  <style type="text/css">
+    #employee tbody tr:hover {
+      cursor: pointer;
+      background-color: #ffff99;
+    }
+  </style>
+</head>
+<body>
+
+<div id="emps"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+
+function constructorEmp (id, firstName, lastName, title){
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.title = title;
+}
+
+var employees = [
+  new constructorEmp (1, "Paulina", "Vaughn", "President"),
+  new constructorEmp (2, "Davina", "Bennett", "Sales Director"),
+  new constructorEmp (3, "Evan", "Green", "Project Coordinator"),
+  new constructorEmp (4, "Al", "Bailey", "Project Manager"),
+  new constructorEmp (5, "Michael", "McLean", "Product Developer"),
+];
+
+console.log (employees);
+
+
+function getEmployee(id){
+  alertMsg = "";
+  for (let x = 0; x <= employees.length; x++){
+
+    if (id == employees[x].id){
+      alertMsg = employees[x].id + " " + employees[x].firstName + " " +
+      employees[x].lastName + " " + employees[x].title;
+      return alertMsg;
+    }
+  }
+
+}
+
+output = "";
+
+employees.forEach((element)=>
+ output += "<tr><td>" + element.id + "</td><td>" + element.firstName +
+  "</td><td>" + element.lastName + "</td><td>" + element.title + "</td></tr>"
+);
+
+document.getElementById('tableBody').innerHTML=output;
+
+  // jQuery onClick event
+  // Don't remove this, just add your code to the body of the event (curly braces)
+ //$(function () {   ***** didn't think I needed this line
+    $("table tr").click(function () {
+    var empId = $(this).find('td:first').html();
+    alert(getEmployee (empId));
+  //  })    ***** didn't think I needed this line
+  });
+
+</script>
+</body>
+</html>
