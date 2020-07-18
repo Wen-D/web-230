@@ -1,0 +1,102 @@
+<!---- ===========================================
+; Title: Assignment 8.2 JQuery
+; Author: Professor Krasso
+; Date: 17 July 2020
+; Modified By: Wendy Leon
+; Description: JQuery - 8.2
+;=========================================== -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+
+  <style type="text/css">
+    body{
+      font-family: roboto;
+    }
+    ul {
+      list-style: none;
+      margin: 20px auto 40px auto;
+      max-width: fit-content;
+      font-weight: 300;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 700;
+    }
+    nav{
+      width: 100%;
+      background: black;
+      text-align: center;
+      padding: 3px 0;
+      font-weight: 500;
+    }
+    nav div{
+      margin: 0px auto;
+    }
+    nav a{
+      margin-right: 40px;
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+<body>
+
+<div>
+  <h1> Fruit List Header </h1>
+
+  <nav>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">About Fruits</a>
+        <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <ul id = "fruits">
+
+  </ul>
+
+</div>
+
+<script>
+
+output = "";
+
+function fruitConstructor (id,fruit){
+
+  this.id = id;
+  this.fruit = fruit;
+
+}
+
+
+var fruitLists = [
+  new fruitConstructor ('1', 'Papaya'),
+  new fruitConstructor ('2', 'Tamarind'),
+  new fruitConstructor ('3', 'Mandarin'),
+  new fruitConstructor ('4', 'Star Fruit'),
+  new fruitConstructor ('5', 'Pomegranate'),
+]
+
+
+fruitLists.forEach ( (element) =>
+  output += "<li>" + element.id + " " + element.fruit + "</li>"
+);
+
+document.getElementById("fruits").innerHTML = output;
+
+
+
+
+</script>
+
+
+</body>
+</html>
